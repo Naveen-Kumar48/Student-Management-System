@@ -2,6 +2,7 @@ import express from 'express'
 import env from 'dotenv'
 import cors from 'cors'
 import connectDB from './config/db.js'
+import authroutes from './routes/auth.routes.js'
 env.config()
 const app=express()
 
@@ -16,6 +17,8 @@ connectDB();
 app.get("/", (req, res) => {
   res.send("Project Management System API running");
 });
+app.use("/api/auth",authroutes);
+
 app.listen(PORT,(req,res)=>{
     console.log(`server is runing at port http://localhost:${PORT}`)
 })
