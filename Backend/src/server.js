@@ -17,6 +17,7 @@ connectDB();
 app.get("/", (req, res) => {
   res.send("Project Management System API running");
 });
+//* ye rah gaya tha 
 app.use("/api/auth",authroutes);
 
 app.listen(PORT,(req,res)=>{
